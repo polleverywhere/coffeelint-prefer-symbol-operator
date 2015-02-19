@@ -1,27 +1,27 @@
 {
-  "name": "coffeelint-prefer-english-operator",
+  "name": "coffeelint-prefer-symbol-operator",
   "version": "0.1.0",
-  "description": "A custom coffeelint rule to prefer english style operators",
+  "description": "A custom coffeelint rule to prefer symbol style operators",
   "main": "index.js",
   "scripts": {
     "test": "mocha --compilers coffee:coffee-script/register test/*.coffee"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/parakeety/coffeelint-prefer-english-operator.git"
+    "url": "git://github.com/polleverywhere/coffeelint-prefer-symbol-operator.git"
   },
   "keywords": [
     "coffeelint",
     "lint",
     "coffeelintrule",
-    "english-operator"
+    "symbol-operator"
   ],
-  "author": "Yohei Okada <yohei.states@akane.waseda.jp>",
+  "author": "Paul Cortens; forked from Yohei Okada <yohei.states@akane.waseda.jp>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/parakeety/coffeelint-prefer-english-operator/issues"
+    "url": "https://github.com/polleverywhere/coffeelint-prefer-symbol-operator/issues"
   },
-  "homepage": "https://github.com/parakeety/coffeelint-prefer-english-operator",
+  "homepage": "https://github.com/polleverywhere/coffeelint-prefer-symbol-operator",
   "peerDependencies": {
     "coffeelint": "^1"
   },

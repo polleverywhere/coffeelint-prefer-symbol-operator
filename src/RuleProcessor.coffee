@@ -1,23 +1,23 @@
 regexes =
-  nonEnglishOperators: /[&|\||\=]{2}|\!\=/
+  englishOperators: /and|or|isnt|is|not/
 
 module.exports = class RuleProcessor
   rule:
-    name: 'prefer_english_operator'
+    name: 'prefer_symbol_operator'
     description: '''
-      This rule prohibits &&, ||, == and !=.
-      Use and, or, is, and isnt instead.
+      This rule prohibits not, and, or, is, and isnt.
+      Use !, &&, ||, ==, and != instead.
       '''
     level: 'warn'
-    message: 'Don\'t use &&, ||, == and !='
+    message: "Don't use not, and, or, is, and isnt"
 
   lintLine: (line, lineApi) ->
     lineTokens = lineApi.getLineTokens()
 
     for token in lineTokens
-      if token[0] in ['COMPARE', 'LOGIC']
+      if token[0] in ['COMPARE', 'LOGIC', 'UNARY']
         location = token[2]
         substring = line[location.first_column..location.last_column]
-        hasNonEnglishOperators = substring.match regexes.nonEnglishOperators
-        if hasNonEnglishOperators
-          return {context: "Found: #{hasNonEnglishOperators[0]}"}
+        hasEnglishOperators = substring.match regexes.englishOperators
+        if hasEnglishOperators
+          return {context: "Found: #{hasEnglishOperators[0]}"}
