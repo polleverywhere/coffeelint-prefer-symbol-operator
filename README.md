@@ -18,6 +18,9 @@ a && b #yes
 a or b #no
 a || b #yes
 
+a or= b #no
+a ||= b #yes
+
 ```
 
 ## How to Install

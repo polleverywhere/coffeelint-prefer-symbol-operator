@@ -31,6 +31,11 @@ describe 'PreferSymbolOperators', ->
       expect(result).to.be.ok
       expect(result.context).to.equal 'Found: or'
 
+    it 'should warn when "or=" is used', ->
+      result = coffeelint.lint('myVar or= 1', configError)[0]
+      expect(result).to.be.ok
+      expect(result.context).to.equal 'Found: or='
+
     it 'should warn when "not" is used', ->
       result = coffeelint.lint('not true', configError)[0]
       expect(result).to.be.ok
@@ -48,6 +53,9 @@ describe 'PreferSymbolOperators', ->
 
     it "should not warn when '||' is used", ->
       expect(coffeelint.lint('1 || 1', configError).length).to.be.not.ok
+
+    it "should not warn when '||=' is used", ->
+      expect(coffeelint.lint('myVar ||= 1', configError).length).to.be.not.ok
 
     it "should not warn when '!' is used", ->
       expect(coffeelint.lint('! true', configError).length).to.be.not.ok

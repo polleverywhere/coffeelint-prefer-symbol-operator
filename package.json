@@ -1,6 +1,6 @@
 {
   "name": "coffeelint-prefer-symbol-operator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A custom coffeelint rule to prefer symbol style operators",
   "main": "index.js",
   "scripts": {
