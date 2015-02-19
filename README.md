@@ -25,7 +25,7 @@ a ||= b #yes
 
 ## How to Install
 
-1. add `"coffeelint-prefer-symbol-operator": "0.1.0"` as `devDependencies` in `package.json`
+1. add `"coffeelint-prefer-symbol-operator": "0.1.1"` as `devDependencies` in `package.json`
 2. `npm install`
 
 ## How to Use
